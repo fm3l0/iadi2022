@@ -81,9 +81,9 @@ class Iadi2022Lab1ApplicationTests {
         Mockito.`when`(userService.userExists(anyString())).thenAnswer { it.arguments[0] == "Maria" }
 
         mvc.post(greetingURL) {
-                accept = MediaType.APPLICATION_JSON
-                content = mapper.writeValueAsString(GreetingRequest("Maria"))
-                contentType = MediaType.APPLICATION_JSON
+            accept = MediaType.APPLICATION_JSON
+            content = mapper.writeValueAsString(GreetingRequest("Maria"))
+            contentType = MediaType.APPLICATION_JSON
         }
             .andExpect {
                 status { isOk() }
