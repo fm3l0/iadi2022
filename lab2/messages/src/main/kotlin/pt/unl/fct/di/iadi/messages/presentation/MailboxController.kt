@@ -3,7 +3,7 @@ package pt.unl.fct.di.iadi.messages.presentation
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class MailboxController: MailBoxAPI {
+class MailboxController(): MailBoxAPI {
     override fun getAllMessageThreads(package_id: Long): Collection<MessageListDTO> {
         TODO("Not yet implemented")
     }

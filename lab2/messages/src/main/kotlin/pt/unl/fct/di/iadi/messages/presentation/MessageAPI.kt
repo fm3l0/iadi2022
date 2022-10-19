@@ -28,8 +28,8 @@ interface MessageAPI {
         ApiResponse(responseCode = "400", description = "Bad request", content = [Content()]),
         ApiResponse(responseCode = "404", description = "Did not find the sought message", content = [Content()])]
     )
-    @GetMapping("{id}")
-    fun getOne(@PathVariable id: Long): Optional<MessageDTO>
+    @GetMapping("{receiver}")
+    fun getOne(@PathVariable receiver: String): MessageDTO
 
     @Operation(summary = "Add one message")
     @ApiResponses(value = [

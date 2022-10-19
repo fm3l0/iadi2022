@@ -48,9 +48,17 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/bmafi/Documents/fct/CIAI/Práticas/iadi2022/lab3",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="pt.unl.fct.di.iadi.messages.service" />
+      <recent name="pt.unl.fct.di.iadi.messages.domain" />
+      <recent name="pt.unl.fct.di.iadi.messages.data" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MessagesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="messages" />
@@ -68,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666130693734</updated>
-      <workItem from="1666130695050" duration="7157000" />
+      <workItem from="1666130695050" duration="12790000" />
     </task>
     <servers />
   </component>
