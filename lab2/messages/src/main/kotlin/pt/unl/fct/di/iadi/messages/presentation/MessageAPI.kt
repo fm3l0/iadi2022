@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import org.springframework.web.bind.annotation.*
-import java.util.*
 
 @RequestMapping("messages")
 interface MessageAPI {
@@ -28,8 +27,8 @@ interface MessageAPI {
         ApiResponse(responseCode = "400", description = "Bad request", content = [Content()]),
         ApiResponse(responseCode = "404", description = "Did not find the sought message", content = [Content()])]
     )
-    @GetMapping("{receiver}")
-    fun getOne(@PathVariable receiver: String): MessageDTO
+    @GetMapping("{id}")
+    fun getOne(@PathVariable id: Long): MessageDTO
 
     @Operation(summary = "Add one message")
     @ApiResponses(value = [
@@ -56,5 +55,14 @@ interface MessageAPI {
     )
     @DeleteMapping("{id}")
     fun deleteOne(@PathVariable id: Long):Unit
+
+    @Operation(summary = "Get messages by receiver name")
+    @ApiResponses(value = [
+        ApiResponse(responseCode = "202", description = "Found the messages", content = [Content()]),
+        ApiResponse(responseCode = "400", description = "Bad request", content = [Content()]),
+        ApiResponse(responseCode = "404", description = "Did not find any messages with that receiver", content = [Content()])]
+    )
+    @GetMapping("/name/{name}")
+    fun getMessagesByName(@PathVariable name:String): Collection<MessageListDTO>
 }
 

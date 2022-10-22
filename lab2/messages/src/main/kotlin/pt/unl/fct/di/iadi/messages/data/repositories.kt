@@ -1,11 +1,17 @@
-package pt.unl.fct.di.iadi.messages.presentation
+package pt.unl.fct.di.iadi.messages.data
 
+import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository
-import pt.unl.fct.di.iadi.messages.data.MessageDAO
 import java.util.*
 
 interface MessageRepository : CrudRepository<MessageDAO, Long> {
 
-    fun findByReceiver(receiver:String):Optional<MessageDAO>
+    override fun findById(id:Long):Optional<MessageDAO>
 
+    override fun findAll(): MutableIterable<MessageDAO>
+
+    override fun deleteById(id:Long)
+
+    @Query(value = "select msg from MessageDAO msg where msg.receiver = :name")
+    fun getMessageByName(name:String): MutableIterable<MessageDAO>
 }

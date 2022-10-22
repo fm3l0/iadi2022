@@ -17,5 +17,4 @@ data class MessageDTO(
 
 data class MessageCreateDTO(val receiver:String, val cc:String, val subject:String, val body:String)
 
-data class MessageListDTO(val id:Long, val to:String, val cc:String, val subject:String)
-
+data class MessageListDTO(val id:Long, val receiver:String, val cc:String, val subject:String)
